@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+:root {
+  --background: #FFFFFF;
+  --foreground: #172F22;
+  --sidepanel: #163224;
+  --section-contrast: #F5F8F6;
+  --accent-nutrition: #2D4E3C;
+  --accent-psychology: #24384A;
+  --accent-action: #C8691A;
+  --border-divider: #D0DDD5;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-sidepanel: var(--sidepanel);
+  --color-section: var(--section-contrast);
+  --color-nutrition: var(--accent-nutrition);
+  --color-psychology: var(--accent-psychology);
+  --color-action: var(--accent-action);
+  --color-divider: var(--border-divider);
+
+  --font-serif: var(--font-lexend);
+  --font-sans: var(--font-lexend);
+
+  /* Anti-Vibe Directive: Disable rounded corners and shadows */
+  --radius-sm: 0px;
+  --radius-md: 0px;
+  --radius-lg: 0px;
+  --radius-xl: 0px;
+  --radius-2xl: 0px;
+  --radius-3xl: 0px;
+  --radius-full: 0px;
+
+  --shadow-sm: none;
+  --shadow-md: none;
+  --shadow-lg: none;
+  --shadow-xl: none;
+  --shadow-2xl: none;
+  --shadow-inner: none;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), sans-serif;
+}
+
+/* Hairline dividers globally */
+* {
+  border-color: var(--border-divider);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-lexend), sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
