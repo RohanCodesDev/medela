@@ -1,9 +1,14 @@
 import type { Metadata } from "next";
-import { Lexend } from "next/font/google";
+import { Lexend, Lora } from "next/font/google";
 import "./globals.css";
 
 const lexend = Lexend({
   variable: "--font-lexend",
+  subsets: ["latin"],
+});
+
+const lora = Lora({
+  variable: "--font-lora",
   subsets: ["latin"],
 });
 
@@ -20,7 +25,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${lexend.variable} antialiased`}>
+    <html lang="en" className={`${lexend.variable} ${lora.variable} antialiased`}>
       <body className="flex h-screen overflow-hidden">
         {/* Dynamic Sidebar */}
         <Sidebar />

@@ -10,7 +10,7 @@ export default function Dispatch() {
           <input 
             type="email" 
             placeholder="Academic or Professional Email Address" 
-            className="w-full border-b border-divider bg-transparent p-4 text-center font-sans text-sm text-foreground placeholder:text-foreground/30 focus:outline-none focus:border-action transition-colors"
+            className="w-full border-b border-divider bg-transparent p-4 text-center font-sans text-sm text-foreground placeholder:text-foreground/30 focus:outline-none focus:border-nutrition transition-colors"
             required
           />
           <div className="flex justify-center gap-6 mt-4">

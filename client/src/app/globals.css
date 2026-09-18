@@ -8,7 +8,7 @@
   --accent-nutrition: #2D4E3C;
   --accent-psychology: #24384A;
   --accent-action: #C8691A;
-  --border-divider: #D0DDD5;
+  --border-divider: rgba(45, 78, 60, 0.4);
 }
 
 @theme inline {
@@ -21,7 +21,7 @@
   --color-action: var(--accent-action);
   --color-divider: var(--border-divider);
 
-  --font-serif: var(--font-lexend);
+  --font-serif: var(--font-lora);
   --font-sans: var(--font-lexend);
 
   /* Anti-Vibe Directive: Disable rounded corners and shadows */
@@ -53,7 +53,259 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-lexend), sans-serif;
+  font-family: var(--font-serif), serif;
   font-weight: 600;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.01em;
 }
+
+.editorial-dropcap::first-letter {
+  font-size: 3.5rem;
+  float: left;
+  line-height: 0.85;
+  margin-top: 0.15rem;
+  margin-right: 0.5rem;
+  font-weight: 700;
+  font-family: var(--font-serif);
+  color: var(--color-foreground);
+}
+
+/* ── Global Enhancements ───────────────────────────────────────── */
+
+/* Custom elegant scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(23, 47, 34, 0.2);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(23, 47, 34, 0.4);
+}
+
+/* Global focus states for accessibility and aesthetics */
+*:focus-visible {
+  outline: 1px solid var(--accent-action);
+  outline-offset: 2px;
+}
+
+/* ── Article body: typography ───────────────────────────────────── */
+article {
+  font-family: var(--font-serif), serif;
+  font-size: 1.125rem; /* slightly larger for readability */
+  line-height: 1.8;
+  color: var(--foreground);
+}
+
+article p {
+  margin-bottom: 1.75rem;
+}
+
+article h2, article h3, article h4 {
+  margin-top: 2.5rem;
+  margin-bottom: 1.25rem;
+}
+
+article h2 {
+  font-size: 1.75rem;
+}
+
+article h3 {
+  font-size: 1.35rem;
+}
+
+article blockquote {
+  border-left: 3px solid var(--accent-action);
+  padding-left: 1.5rem;
+  margin: 2rem 0;
+  font-style: italic;
+  color: rgba(23, 47, 34, 0.85);
+  background: var(--section-contrast);
+  padding: 1.5rem;
+}
+
+/* ── Article body: tables ──────────────────────────────────────── */
+article table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2rem 0 2.5rem;
+  font-size: 0.925rem;
+  line-height: 1.6;
+}
+
+article table th,
+article table td {
+  text-align: left;
+  padding: 0.65rem 1rem;
+  border: 1px solid var(--border-divider);
+  vertical-align: top;
+}
+
+article table thead th {
+  background-color: var(--section-contrast);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  color: var(--foreground);
+}
+
+article table tbody tr:nth-child(even) td {
+  background-color: rgba(245, 248, 246, 0.55);
+}
+
+/* ── Article body: lists ───────────────────────────────────────── */
+article ul,
+article ol {
+  padding-left: 1.5rem;
+  margin: 1rem 0 1.75rem;
+  line-height: 1.85;
+}
+
+article ul {
+  list-style-type: disc;
+}
+
+article ol {
+  list-style-type: decimal;
+}
+
+article li {
+  margin-bottom: 0.4rem;
+  color: rgba(23, 47, 34, 0.88);
+}
+
+article li::marker {
+  color: var(--accent-nutrition);
+  font-weight: 600;
+}
+
+/* ── Article body: inline emphasis ────────────────────────────── */
+article strong {
+  font-weight: 700;
+  color: var(--foreground);
+}
+
+article em {
+  font-style: italic;
+  color: rgba(23, 47, 34, 0.75);
+}
+
+/* ── Article body: figures ─────────────────────────────────────── */
+article figure {
+  margin: 0;
+  padding: 0;
+}
+
+article figcaption {
+  font-size: 0.8rem;
+  font-family: var(--font-sans), sans-serif;
+  color: rgba(23, 47, 34, 0.55);
+  font-style: italic;
+  letter-spacing: 0.01em;
+  line-height: 1.5;
+  margin-top: 0.6rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--border-divider);
+}
+
+/* Hero figure — full width, bleeds to column edges */
+article figure.article-hero-figure {
+  margin: 0 0 2.5rem;
+}
+
+article figure.article-hero-figure img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  object-position: center 30%;
+  display: block;
+}
+
+/* Wide figure — full width, for infographics/timelines */
+article figure.article-wide-figure {
+  margin: 2.5rem 0;
+  background-color: var(--section-contrast);
+  padding: 1.5rem;
+  border: 1px solid var(--border-divider);
+}
+
+article figure.article-wide-figure img {
+  width: 100%;
+  height: auto;
+  max-height: 480px;
+  object-fit: contain;
+  display: block;
+}
+
+/* Inline figure — floats right, text wraps around */
+article figure.article-inline-figure {
+  float: right;
+  width: 42%;
+  margin: 0.25rem 0 1.5rem 2rem;
+  clear: right;
+}
+
+article figure.article-inline-figure img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Centered figure — block level, horizontally centered */
+article figure.article-center-figure {
+  margin: 2.5rem auto;
+  text-align: center;
+  clear: both;
+}
+
+article figure.article-center-figure img {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Clear floats after sections */
+article h2,
+article h3 {
+  clear: both;
+}
+
+/* Image + text side-by-side pair */
+article .article-image-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: start;
+  margin: 1.5rem 0 2rem;
+  clear: both;
+}
+
+article .article-image-pair figure {
+  margin: 0;
+}
+
+article .article-image-pair figure img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  display: block;
+}
+
+article .article-image-pair-text {
+  display: flex;
+  align-items: flex-start;
+}
+
+article .article-image-pair-text ul {
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+

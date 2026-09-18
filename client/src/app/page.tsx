@@ -5,14 +5,14 @@ export default function Home() {
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
-      <section className="relative w-full h-[60vh] flex items-end p-12 overflow-hidden bg-background">
-        {/* Placeholder for fluid marble texture */}
-        <div className="absolute inset-0 opacity-20 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle at 50% 50%, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0) 100%)' }} />
-        <div className="relative z-10 max-w-3xl">
-          <h2 className="text-5xl font-serif leading-tight text-foreground pb-4 mb-3 border-b border-divider">
+      <section className="relative w-full min-h-[60vh] flex flex-col justify-center px-12 py-20 overflow-hidden bg-background">
+        {/* Subtle radial gradient background */}
+        <div className="absolute inset-0 opacity-[0.15] pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle at 50% 50%, var(--accent-action) 0%, transparent 70%)' }} />
+        <div className="relative z-10 max-w-4xl">
+          <h2 className="text-5xl md:text-6xl lg:text-7xl font-serif leading-[1.1] text-foreground pb-6 mb-6 border-b border-divider/60">
             Synthesizing Nutritional Biochemistry and Behavioral Psychology.
           </h2>
-          <p className="text-lg font-sans text-foreground/80 max-w-xl leading-relaxed">
+          <p className="text-xl md:text-2xl font-sans text-foreground/80 max-w-2xl leading-relaxed font-light">
             Medela Concertedly publishes peer-reviewed discourse at the intersection of human metabolism and cognitive science.
           </p>
         </div>
@@ -34,34 +34,37 @@ export default function Home() {
       </section>
 
       {/* 3 Domain Previews */}
-      <section className="p-12 border-b border-divider bg-background">
-        <h3 className="text-3xl font-bold uppercase tracking-wider text-foreground pb-3 mb-12 border-b border-[#172F22]">
+      <section className="px-12 py-16 border-b border-divider bg-background">
+        <h3 className="text-3xl font-serif text-foreground pb-4 mb-12 border-b border-[#172F22]/50">
           Core Domains
         </h3>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 border-t border-l border-divider">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-0 border border-divider shadow-sm">
           
-          <a href="/nutrition" className="group block border-r border-b border-divider p-8 hover:bg-section transition-colors">
-            <ArchFrame className="w-full aspect-[2/3] bg-nutrition/10 mb-6 flex items-center justify-center">
-              <span className="text-nutrition text-xs uppercase tracking-widest opacity-50 group-hover:opacity-100 transition-opacity">Visual Asset</span>
+          <a href="/nutrition" className="group block border-r border-b md:border-b-0 border-divider p-8 hover:bg-section transition-all duration-500 relative overflow-hidden">
+            <div className="absolute inset-0 bg-nutrition/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            <ArchFrame className="relative w-full aspect-[2/3] bg-nutrition/10 mb-8 flex items-center justify-center overflow-hidden">
+              <img src="/images/nutrition_illustration.jpg" alt="Nutritional Biochemistry" className="w-full h-full object-cover grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 ease-out" />
             </ArchFrame>
-            <h4 className="font-serif text-2xl text-foreground mb-3">Nutritional Biochemistry</h4>
-            <p className="font-sans text-sm text-foreground/70 leading-relaxed">Metabolic pathways, micronutrient sufficiency, and systemic inflammation.</p>
+            <h4 className="relative font-serif text-2xl text-foreground mb-3 group-hover:text-nutrition transition-colors">Nutritional Biochemistry</h4>
+            <p className="relative font-sans text-sm text-foreground/70 leading-relaxed">Metabolic pathways, micronutrient sufficiency, and systemic inflammation.</p>
           </a>
 
-          <a href="/psychology" className="group block border-r border-b border-divider p-8 hover:bg-section transition-colors">
-            <ArchFrame className="w-full aspect-[2/3] bg-psychology/10 mb-6 flex items-center justify-center">
-              <span className="text-psychology text-xs uppercase tracking-widest opacity-50 group-hover:opacity-100 transition-opacity">Visual Asset</span>
+          <a href="/psychology" className="group block border-r border-b md:border-b-0 border-divider p-8 hover:bg-section transition-all duration-500 relative overflow-hidden">
+            <div className="absolute inset-0 bg-psychology/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            <ArchFrame className="relative w-full aspect-[2/3] bg-psychology/10 mb-8 flex items-center justify-center overflow-hidden">
+              <img src="/images/psychology_illustration.jpg" alt="Behavioral Psychology" className="w-full h-full object-cover grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 ease-out" />
             </ArchFrame>
-            <h4 className="font-serif text-2xl text-foreground mb-3">Behavioral Psychology</h4>
-            <p className="font-sans text-sm text-foreground/70 leading-relaxed">Neurobiology of trauma, habit formation, and cognitive behavioral models.</p>
+            <h4 className="relative font-serif text-2xl text-foreground mb-3 group-hover:text-psychology transition-colors">Behavioral Psychology</h4>
+            <p className="relative font-sans text-sm text-foreground/70 leading-relaxed">Neurobiology of trauma, habit formation, and cognitive behavioral models.</p>
           </a>
 
-          <a href="/gut-brain" className="group block border-r border-b border-divider p-8 hover:bg-section transition-colors">
-            <ArchFrame className="w-full aspect-[2/3] bg-action/10 mb-6 flex items-center justify-center">
-              <span className="text-action text-xs uppercase tracking-widest opacity-50 group-hover:opacity-100 transition-opacity">Visual Asset</span>
+          <a href="/gut-brain" className="group block p-8 hover:bg-section transition-all duration-500 relative overflow-hidden">
+            <div className="absolute inset-0 bg-action/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            <ArchFrame className="relative w-full aspect-[2/3] bg-action/10 mb-8 flex items-center justify-center overflow-hidden">
+              <img src="/images/gut_brain_illustration.jpg" alt="The Gut-Brain Axis" className="w-full h-full object-cover grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 ease-out" />
             </ArchFrame>
-            <h4 className="font-serif text-2xl text-foreground mb-3">The Gut-Brain Axis</h4>
-            <p className="font-sans text-sm text-foreground/70 leading-relaxed">Microbiome signaling, vagal nerve tone, and integrated psychiatric approaches.</p>
+            <h4 className="relative font-serif text-2xl text-foreground mb-3 group-hover:text-action transition-colors">The Gut-Brain Axis</h4>
+            <p className="relative font-sans text-sm text-foreground/70 leading-relaxed">Microbiome signaling, vagal nerve tone, and integrated psychiatric approaches.</p>
           </a>
 
         </div>
@@ -73,28 +76,28 @@ export default function Home() {
           <h3 className="text-3xl font-bold uppercase tracking-wider text-foreground">
             Recent Publications
           </h3>
-          <a href="/archive" className="text-xs uppercase tracking-widest text-action hover:text-foreground transition-colors border-b border-action hover:border-foreground pb-1">View Full Archive</a>
+          <a href="/archive" className="text-xs uppercase tracking-widest text-action hover:text-foreground transition-colors border-b border-nutrition/40 hover:border-nutrition/40 pb-1">View Full Archive</a>
         </div>
         <ArchiveTable />
       </section>
 
       {/* Newsletter Capture */}
-      <section className="p-12 bg-background flex justify-center py-24">
-        <div className="max-w-xl w-full border border-divider p-12 text-center">
-          <h3 className="font-serif text-3xl mb-4 text-foreground">Subscribe to Dispatch</h3>
-          <p className="font-sans text-sm text-foreground/70 mb-8 leading-relaxed">
+      <section className="px-12 py-24 bg-background flex justify-center">
+        <div className="max-w-xl w-full border border-divider bg-section/30 p-12 text-center shadow-[4px_4px_0px_0px_rgba(23,47,34,0.1)] transition-all hover:shadow-[6px_6px_0px_0px_rgba(23,47,34,0.15)]">
+          <h3 className="font-serif text-4xl mb-4 text-foreground">Subscribe to Dispatch</h3>
+          <p className="font-sans text-base text-foreground/75 mb-8 leading-relaxed">
             Receive monthly syntheses of our latest publications and curations directly to your inbox.
           </p>
-          <form className="flex flex-col gap-4">
+          <form className="flex flex-col gap-6">
             <input 
               type="email" 
               placeholder="Email Address" 
-              className="w-full border-b border-divider bg-transparent p-3 text-center font-sans text-sm text-foreground placeholder:text-foreground/30 focus:outline-none focus:border-action transition-colors"
+              className="w-full border-b-2 border-divider/50 bg-transparent p-3 text-center font-sans text-base text-foreground placeholder:text-foreground/40 focus:outline-none focus:border-action transition-colors"
               required
             />
             <button 
               type="submit" 
-              className="w-full border border-divider p-3 text-xs uppercase tracking-widest text-foreground hover:bg-foreground hover:text-background transition-colors"
+              className="w-full border-2 border-foreground bg-foreground p-4 text-sm uppercase tracking-widest font-semibold text-background hover:bg-background hover:text-foreground transition-colors duration-300"
             >
               Subscribe
             </button>
