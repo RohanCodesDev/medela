@@ -1,6 +1,6 @@
 export default function Dispatch() {
   return (
-    <div suppressHydrationWarning className="p-12 flex items-center justify-center min-h-full">
+    <div suppressHydrationWarning className="p-6 md:p-12 flex items-center justify-center min-h-full">
       <div suppressHydrationWarning className="max-w-2xl w-full border border-divider p-16 text-center bg-background">
         <h1 suppressHydrationWarning className="font-serif text-4xl mb-6 text-foreground">Subscribe to Dispatch</h1>
         <p suppressHydrationWarning className="font-sans text-base text-foreground/70 mb-12 leading-relaxed">

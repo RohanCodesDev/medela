@@ -2,10 +2,10 @@ import ArchFrame from '@/components/ArchFrame';
 
 export default function Nutrition() {
   return (
-    <div suppressHydrationWarning className="p-12">
+    <div suppressHydrationWarning className="p-6 md:p-12">
       <div suppressHydrationWarning className="max-w-3xl border-b border-divider pb-12 mb-12">
         <h2 suppressHydrationWarning className="text-xl font-bold uppercase tracking-wider text-foreground mb-4">Domain 01</h2>
-        <h1 suppressHydrationWarning className="text-5xl font-serif text-foreground mb-6">Nutritional Biochemistry</h1>
+        <h1 suppressHydrationWarning className="text-4xl md:text-5xl font-serif text-foreground mb-6">Nutritional Biochemistry</h1>
         <p suppressHydrationWarning className="text-lg font-sans text-foreground/80 leading-relaxed">
           Exploring metabolic pathways, micronutrient sufficiency, and systemic inflammation as they relate to cognitive function.
         </p>

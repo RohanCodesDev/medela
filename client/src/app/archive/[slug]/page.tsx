@@ -582,13 +582,13 @@ export default async function PublicationPage({ params }: { params: Promise<{ sl
 
   return (
     <div suppressHydrationWarning className="flex relative w-full">
-      <div suppressHydrationWarning className="flex-grow max-w-4xl p-12">
+      <div suppressHydrationWarning className="flex-grow max-w-4xl p-6 md:p-12">
         <header suppressHydrationWarning className="border-b border-divider pb-12 mb-12">
           <div suppressHydrationWarning className="flex gap-4 mb-6">
             <span suppressHydrationWarning className="text-xs uppercase tracking-widest text-[#172F22]/60 border border-[#214232]/30 px-3 py-1 font-sans">{pub.domain}</span>
             <span suppressHydrationWarning className="text-xs uppercase tracking-widest text-[#172F22]/60 border border-[#214232]/30 px-3 py-1 font-sans">{pub.format}</span>
           </div>
-          <h1 suppressHydrationWarning className="text-5xl font-serif text-[#172F22] leading-tight mb-6">{pub.title}</h1>
+          <h1 suppressHydrationWarning className="text-4xl md:text-5xl font-serif text-[#172F22] leading-tight mb-6">{pub.title}</h1>
           <time className="text-sm font-sans text-[#172F22]/50">{new Date(pub.published_at).toLocaleDateString()}</time>
         </header>
         

@@ -26,12 +26,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${lexend.variable} ${lora.variable} antialiased`} suppressHydrationWarning>
-      <body className="flex h-screen overflow-hidden" suppressHydrationWarning>
+      <body className="flex flex-col md:flex-row h-screen overflow-hidden" suppressHydrationWarning>
         {/* Dynamic Sidebar */}
         <Sidebar />
 
-        {/* 80% scrollable main content canvas */}
-        <main suppressHydrationWarning className="w-4/5 h-full overflow-y-auto bg-background">
+        {/* scrollable main content canvas */}
+        <main suppressHydrationWarning className="w-full md:w-4/5 h-full overflow-y-auto bg-background">
           {children}
         </main>
       </body>
