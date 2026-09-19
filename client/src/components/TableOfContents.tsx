@@ -85,22 +85,22 @@ export default function TableOfContents({ sections }: TableOfContentsProps) {
   return (
     <>
       {/* Fixed Reading Progress Bar at the top of the page */}
-      <div 
+      <div suppressHydrationWarning 
         className="fixed top-0 left-0 h-[3px] bg-[#2D4E3C] z-50 transition-all duration-75 ease-out" 
         style={{ width: `${scrollProgress}%` }}
         aria-hidden="true"
       />
 
       {/* Sticky Table of Contents Sidebar */}
-      <aside className="hidden xl:block w-64 border-l border-[#2D4E3C]/10 p-12 sticky top-0 h-screen overflow-y-auto">
-        <h4 className="text-xs uppercase tracking-widest text-[#172F22]/60 mb-6 border-b border-[#2D4E3C]/10 pb-2">
+      <aside suppressHydrationWarning className="hidden xl:block w-64 border-l border-[#2D4E3C]/10 p-12 sticky top-0 h-screen overflow-y-auto">
+        <h4 suppressHydrationWarning className="text-xs uppercase tracking-widest text-[#172F22]/60 mb-6 border-b border-[#2D4E3C]/10 pb-2">
           Contents
         </h4>
-        <nav className="flex flex-col gap-4 font-sans text-sm">
+        <nav suppressHydrationWarning className="flex flex-col gap-4 font-sans text-sm">
           {sections.map((sec) => {
             const isActive = activeId === sec.id;
             return (
-              <a
+              <a suppressHydrationWarning
                 key={sec.id}
                 href={`#${sec.id}`}
                 onClick={(e) => handleLinkClick(e, sec.id)}

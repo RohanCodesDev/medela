@@ -31,7 +31,7 @@ export default function RootLayout({
         <Sidebar />
 
         {/* 80% scrollable main content canvas */}
-        <main className="w-4/5 h-full overflow-y-auto bg-background">
+        <main suppressHydrationWarning className="w-4/5 h-full overflow-y-auto bg-background">
           {children}
         </main>
       </body>

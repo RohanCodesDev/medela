@@ -26,15 +26,16 @@ export default function Sidebar() {
   const isActive = (path: string) => pathname === path;
 
   return (
-    <aside className="w-1/5 h-full border-r border-[#214232] bg-sidepanel flex flex-col p-8 text-[#E2ECE6] select-none">
-      <div className="mb-12">
-        <h1 className="text-2xl font-serif text-[#F5F8F6]">Medela Concertedly</h1>
-        <p className="text-xs text-[#9BB6A7] uppercase tracking-widest mt-2">Editorial Index</p>
+    <aside suppressHydrationWarning className="w-1/5 h-full border-r border-[#214232] bg-sidepanel flex flex-col p-8 text-[#E2ECE6] select-none">
+      <div suppressHydrationWarning className="mb-12">
+        <h1 suppressHydrationWarning className="text-2xl font-serif text-[#F5F8F6]">Medela Concertedly</h1>
+        <p suppressHydrationWarning className="text-xs text-[#9BB6A7] uppercase tracking-widest mt-2">Editorial Index</p>
       </div>
 
-      <nav className="flex flex-col gap-8 text-base font-sans">
+      <nav suppressHydrationWarning className="flex flex-col gap-8 text-base font-sans">
         {/* 1. About Us */}
         <Link
+          suppressHydrationWarning
           href="/about-us"
           className={`transition-all duration-300 pl-4 py-1 border-l-2 ${isActive('/about-us')
             ? 'border-[#F2E28B] text-[#F2E28B] font-semibold bg-white/5'
@@ -46,6 +47,7 @@ export default function Sidebar() {
 
         {/* 2. Manifesto */}
         <Link
+          suppressHydrationWarning
           href="/"
           className={`transition-all duration-300 pl-4 py-1 border-l-2 ${isActive('/')
             ? 'border-[#F2E28B] text-[#F2E28B] font-semibold bg-white/5'
@@ -56,30 +58,33 @@ export default function Sidebar() {
         </Link>
 
         {/* 3. Publication Archive */}
-        <div>
-          <div className={`flex items-center justify-between transition-all duration-300 pl-4 py-1 border-l-2 ${pathname.startsWith('/archive')
+        <div suppressHydrationWarning>
+          <div suppressHydrationWarning className={`flex items-center justify-between transition-all duration-300 pl-4 py-1 border-l-2 ${pathname.startsWith('/archive')
             ? 'border-[#F2E28B] text-[#F2E28B] font-semibold bg-white/5'
             : 'border-transparent text-[#E2ECE6] hover:text-[#F2E28B] hover:border-[#F2E28B]/50'
             }`}>
             <Link
+              suppressHydrationWarning
               href="/archive"
               className="flex-grow"
             >
               Publication Archive
             </Link>
             <button
+              suppressHydrationWarning
               onClick={() => setArchiveExpanded(!archiveExpanded)}
               className="text-[#9BB6A7] hover:text-white p-1 focus:outline-none"
               aria-label="Toggle sub-topics"
             >
-              <span className="text-xs">{archiveExpanded ? '▼' : '▶'}</span>
+              <span suppressHydrationWarning className="text-xs">{archiveExpanded ? '▼' : '▶'}</span>
             </button>
           </div>
 
           {/* Sub-topics: Publications */}
           {archiveExpanded && (
-            <div className="ml-4 mt-3 flex flex-col gap-3 text-sm border-l border-[#28503D] pl-4 pr-2">
+            <div suppressHydrationWarning className="ml-4 mt-3 flex flex-col gap-3 text-sm border-l border-[#28503D] pl-4 pr-2">
               <Link
+                suppressHydrationWarning
                 href="/archive/infancy-growth-development"
                 className={`transition-colors leading-snug ${isActive('/archive/infancy-growth-development') ? 'text-[#F2E28B] font-semibold' : 'text-[#A2C2B0] hover:text-[#F2E28B]'
                   }`}
@@ -87,6 +92,7 @@ export default function Sidebar() {
                 Infancy: Growth and Development
               </Link>
               <Link
+                suppressHydrationWarning
                 href="/archive/infant-physical-development"
                 className={`transition-colors leading-snug ${isActive('/archive/infant-physical-development') ? 'text-[#F2E28B] font-semibold' : 'text-[#A2C2B0] hover:text-[#F2E28B]'
                   }`}
@@ -94,6 +100,7 @@ export default function Sidebar() {
                 Physical Growth and Developmental Changes from Infancy to Adolescence
               </Link>
               <Link
+                suppressHydrationWarning
                 href="/archive/metabolic-flexibility"
                 className={`transition-colors leading-snug ${isActive('/archive/metabolic-flexibility') ? 'text-[#F2E28B] font-semibold' : 'text-[#A2C2B0] hover:text-[#F2E28B]'
                   }`}
@@ -101,6 +108,7 @@ export default function Sidebar() {
                 Metabolic Flexibility in Fasting States
               </Link>
               <Link
+                suppressHydrationWarning
                 href="/archive/neuroplasticity-habit"
                 className={`transition-colors leading-snug ${isActive('/archive/neuroplasticity-habit') ? 'text-[#F2E28B] font-semibold' : 'text-[#A2C2B0] hover:text-[#F2E28B]'
                   }`}
@@ -108,6 +116,7 @@ export default function Sidebar() {
                 Neuroplasticity and Habit Formation
               </Link>
               <Link
+                suppressHydrationWarning
                 href="/archive/microbiome-depression"
                 className={`transition-colors leading-snug ${isActive('/archive/microbiome-depression') ? 'text-[#F2E28B] font-semibold' : 'text-[#A2C2B0] hover:text-[#F2E28B]'
                   }`}
@@ -120,6 +129,7 @@ export default function Sidebar() {
 
         {/* 4. Faculty and methodology */}
         <Link
+          suppressHydrationWarning
           href="/about"
           className={`transition-all duration-300 pl-4 py-1 border-l-2 ${isActive('/about')
             ? 'border-[#F2E28B] text-[#F2E28B] font-semibold bg-white/5'
@@ -130,10 +140,11 @@ export default function Sidebar() {
         </Link>
       </nav>
 
-      <div className="mt-auto">
+      <div suppressHydrationWarning className="mt-auto">
         <button
+          suppressHydrationWarning
           onClick={() => setIsJoinModalOpen(true)}
-          className="text-sm font-semibold border-b pb-1 transition-colors text-[#E89248] border-[#28503D]/40 hover:text-[#F2E28B] hover:border-[#A2C2B0]/40 text-left"
+          className="text-sm font-semibold border-b pb-1 transition-colors text-[#E89248] border-[#28503D]/40 hover:text-[#F2E28B] hover:border-[#A2C2B0]/40 text-left w-full"
         >
           Join Our Community
         </button>

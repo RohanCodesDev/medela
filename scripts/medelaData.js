@@ -1,34 +1,12 @@
-/**
- * Google Apps Script to handle Medela Concertedly "Join Community" Submissions.
- * 
- * Setup Instructions:
- * 1. Open your Google Sheet
- * 2. Go to Extensions > Apps Script
- * 3. Delete the default code and paste this entire file's contents
- * 4. Click Deploy > New Deployment
- * 5. Select type "Web app"
- * 6. Set "Execute as" to "Me"
- * 7. Set "Who has access" to "Anyone"
- * 8. Click Deploy and authorize the script
- * 9. Copy the "Web app URL" provided to use in your frontend fetch request
- */
-
-const SHEET_NAME = "Sheet1"; // Update this if your sheet tab is named differently (e.g., "Responses")
-
 function doPost(e) {
   try {
+    // Connect to the active spreadsheet and select the first tab
     const doc = SpreadsheetApp.getActiveSpreadsheet();
-    // Default to SHEET_NAME or the first sheet if not found
-    const sheet = doc.getSheetByName(SHEET_NAME) || doc.getSheets()[0];
+    const sheet = doc.getSheets()[0];
     
-    let data = {};
-    
-    // Parse incoming data based on how it was sent from the client
-    if (e.postData && e.postData.contents) {
-      data = JSON.parse(e.postData.contents);
-    } else if (e.parameter) {
-      data = e.parameter;
-    }
+    // Because we are sending 'application/x-www-form-urlencoded' from the frontend,
+    // Google Apps Script automatically parses the data into 'e.parameter'
+    const data = e.parameter;
     
     // Map the incoming payload to your exact spreadsheet columns:
     // Column A: Name
@@ -61,11 +39,4 @@ function doPost(e) {
       .createTextOutput(JSON.stringify({ status: "error", message: error.toString() }))
       .setMimeType(ContentService.MimeType.JSON);
   }
-}
-
-// Handle preflight requests for CORS if needed
-function doOptions(e) {
-  return ContentService
-    .createTextOutput("OK")
-    .setMimeType(ContentService.MimeType.TEXT);
 }
