@@ -6,8 +6,6 @@ export default function Home() {
     <div suppressHydrationWarning className="flex flex-col">
       {/* Hero Section */}
       <section suppressHydrationWarning className="relative w-full min-h-[60vh] flex flex-col justify-center px-6 py-12 md:px-12 md:py-20 overflow-hidden bg-background">
-        {/* Subtle radial gradient background */}
-        <div suppressHydrationWarning className="absolute inset-0 opacity-[0.15] pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle at 50% 50%, var(--accent-action) 0%, transparent 70%)' }} />
         <div suppressHydrationWarning className="relative z-10 max-w-4xl">
           <h2 suppressHydrationWarning className="text-4xl md:text-6xl lg:text-7xl font-serif leading-[1.1] text-foreground pb-6 mb-6 border-b border-divider/60">
             Synthesizing Nutritional Biochemistry and Behavioral Psychology.
