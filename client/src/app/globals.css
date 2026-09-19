@@ -53,9 +53,8 @@ body {
 }
 
 /* Nuclear mobile guard — no image or media element can ever be wider than its container */
-img, video, iframe, embed, object, svg {
+img, video, iframe, embed, object {
   max-width: 100%;
-  height: auto;
 }
 
 /* Hairline dividers globally */
