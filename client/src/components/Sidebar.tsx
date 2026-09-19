@@ -32,7 +32,7 @@ export default function Sidebar() {
   const isActive = (path: string) => pathname === path;
 
   return (
-    <aside suppressHydrationWarning className="w-full md:w-1/5 h-auto md:h-full border-b md:border-b-0 md:border-r border-[#214232] bg-sidepanel flex flex-col md:p-8 text-[#E2ECE6] select-none flex-shrink-0 z-50">
+    <aside suppressHydrationWarning className="relative w-full md:w-1/5 h-auto md:h-full border-b md:border-b-0 md:border-r border-[#214232] bg-sidepanel flex flex-col md:p-8 text-[#E2ECE6] select-none flex-shrink-0 z-50">
       
       {/* Top Header - Always visible */}
       <div suppressHydrationWarning className="flex items-center justify-between p-6 md:p-0 md:mb-12">
@@ -59,7 +59,7 @@ export default function Sidebar() {
       </div>
 
       {/* Nav Content - Toggled on mobile, always visible on desktop */}
-      <div suppressHydrationWarning className={`${isMobileMenuOpen ? 'flex' : 'hidden'} md:flex flex-col flex-grow px-6 pb-6 md:px-0 md:pb-0 overflow-y-auto`}>
+      <div suppressHydrationWarning className={`${isMobileMenuOpen ? 'absolute top-full left-0 right-0 flex bg-sidepanel border-b border-[#214232] shadow-2xl max-h-[75vh]' : 'hidden'} md:static md:flex flex-col flex-grow px-6 pb-6 md:px-0 md:pb-0 overflow-y-auto z-40`}>
         <nav suppressHydrationWarning className="flex flex-col gap-6 md:gap-8 text-base font-sans mt-4 md:mt-0">
           {/* 1. About Us */}
           <Link

@@ -63,7 +63,7 @@ export default function JoinCommunityModal({ isOpen, onClose }: JoinCommunityMod
       />
       
       {/* Modal Content */}
-      <div suppressHydrationWarning className="relative w-full max-w-2xl bg-white border-2 border-[#172F22] shadow-[8px_8px_0px_0px_rgba(23,47,34,1)] overflow-hidden animate-in fade-in zoom-in-95 duration-200">
+      <div suppressHydrationWarning className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto bg-white border-2 border-[#172F22] shadow-[8px_8px_0px_0px_rgba(23,47,34,1)] animate-in fade-in zoom-in-95 duration-200">
         <div suppressHydrationWarning className="p-8 md:p-10">
           <button suppressHydrationWarning 
             onClick={onClose}
