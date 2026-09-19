@@ -32,7 +32,9 @@ export default function ArchiveTable() {
               </td>
               <td className="p-5 border-b border-r border-divider text-foreground/80">{pub.domain}</td>
               <td className="p-5 border-b border-r border-divider text-foreground/80">{pub.format}</td>
-              <td className="p-5 border-b border-r border-divider text-foreground/60 transition-colors duration-300 group-hover/row:text-foreground/90">{new Date(pub.published_at).toLocaleDateString()}</td>
+              <td className="p-5 border-b border-r border-divider text-foreground/60 transition-colors duration-300 group-hover/row:text-foreground/90">
+                {pub.published_at.split('-').map(n => parseInt(n, 10)).reverse().join('/')}
+              </td>
             </tr>
           ))}
         </tbody>

@@ -83,21 +83,21 @@ export default function Home() {
 
       {/* Newsletter Capture */}
       <section className="px-12 py-24 bg-background flex justify-center">
-        <div className="max-w-xl w-full border border-divider bg-section/30 p-12 text-center shadow-[4px_4px_0px_0px_rgba(23,47,34,0.1)] transition-all hover:shadow-[6px_6px_0px_0px_rgba(23,47,34,0.15)]">
-          <h3 className="font-serif text-4xl mb-4 text-foreground">Subscribe to Dispatch</h3>
-          <p className="font-sans text-base text-foreground/75 mb-8 leading-relaxed">
+        <div className="max-w-xl w-full bg-white border-2 border-[#172F22] shadow-[8px_8px_0px_0px_rgba(23,47,34,1)] p-12 text-center transition-all hover:-translate-y-1 hover:shadow-[12px_12px_0px_0px_rgba(23,47,34,1)] duration-300">
+          <h3 className="font-serif text-4xl mb-4 text-[#172F22]">Subscribe to Dispatch</h3>
+          <p className="font-sans text-base text-[#172F22]/70 mb-8 leading-relaxed">
             Receive monthly syntheses of our latest publications and curations directly to your inbox.
           </p>
-          <form className="flex flex-col gap-6">
+          <form className="flex flex-col gap-8">
             <input 
               type="email" 
               placeholder="Email Address" 
-              className="w-full border-b-2 border-divider/50 bg-transparent p-3 text-center font-sans text-base text-foreground placeholder:text-foreground/40 focus:outline-none focus:border-action transition-colors"
+              className="w-full bg-transparent border-b-2 border-[#172F22]/20 pb-3 text-center text-[#172F22] text-base placeholder:text-[#172F22]/40 focus:outline-none focus:border-[#172F22] transition-colors font-sans"
               required
             />
             <button 
               type="submit" 
-              className="w-full border-2 border-foreground bg-foreground p-4 text-sm uppercase tracking-widest font-semibold text-background hover:bg-background hover:text-foreground transition-colors duration-300"
+              className="w-full bg-[#172F22] hover:bg-[#214232] text-white font-semibold uppercase tracking-widest text-xs py-5 border border-[#172F22] transition-colors duration-300"
             >
               Subscribe
             </button>

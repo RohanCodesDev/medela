@@ -3,10 +3,12 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import JoinCommunityModal from './JoinCommunityModal';
 
 export default function Sidebar() {
   const pathname = usePathname();
   const [archiveExpanded, setArchiveExpanded] = useState(true);
+  const [isJoinModalOpen, setIsJoinModalOpen] = useState(false);
 
   // Keep expanded if on any archive/domain sub-route
   useEffect(() => {
@@ -34,11 +36,10 @@ export default function Sidebar() {
         {/* 1. About Us */}
         <Link
           href="/about-us"
-          className={`transition-all duration-300 pl-4 py-1 border-l-2 ${
-            isActive('/about-us')
-              ? 'border-[#F2E28B] text-[#F2E28B] font-semibold bg-white/5'
-              : 'border-transparent text-[#E2ECE6] hover:text-[#F2E28B] hover:border-[#F2E28B]/50'
-          }`}
+          className={`transition-all duration-300 pl-4 py-1 border-l-2 ${isActive('/about-us')
+            ? 'border-[#F2E28B] text-[#F2E28B] font-semibold bg-white/5'
+            : 'border-transparent text-[#E2ECE6] hover:text-[#F2E28B] hover:border-[#F2E28B]/50'
+            }`}
         >
           About Us
         </Link>
@@ -46,22 +47,20 @@ export default function Sidebar() {
         {/* 2. Manifesto */}
         <Link
           href="/"
-          className={`transition-all duration-300 pl-4 py-1 border-l-2 ${
-            isActive('/')
-              ? 'border-[#F2E28B] text-[#F2E28B] font-semibold bg-white/5'
-              : 'border-transparent text-[#E2ECE6] hover:text-[#F2E28B] hover:border-[#F2E28B]/50'
-          }`}
+          className={`transition-all duration-300 pl-4 py-1 border-l-2 ${isActive('/')
+            ? 'border-[#F2E28B] text-[#F2E28B] font-semibold bg-white/5'
+            : 'border-transparent text-[#E2ECE6] hover:text-[#F2E28B] hover:border-[#F2E28B]/50'
+            }`}
         >
           Manifesto
         </Link>
 
         {/* 3. Publication Archive */}
         <div>
-          <div className={`flex items-center justify-between transition-all duration-300 pl-4 py-1 border-l-2 ${
-            pathname.startsWith('/archive')
-              ? 'border-[#F2E28B] text-[#F2E28B] font-semibold bg-white/5'
-              : 'border-transparent text-[#E2ECE6] hover:text-[#F2E28B] hover:border-[#F2E28B]/50'
-          }`}>
+          <div className={`flex items-center justify-between transition-all duration-300 pl-4 py-1 border-l-2 ${pathname.startsWith('/archive')
+            ? 'border-[#F2E28B] text-[#F2E28B] font-semibold bg-white/5'
+            : 'border-transparent text-[#E2ECE6] hover:text-[#F2E28B] hover:border-[#F2E28B]/50'
+            }`}>
             <Link
               href="/archive"
               className="flex-grow"
@@ -82,41 +81,36 @@ export default function Sidebar() {
             <div className="ml-4 mt-3 flex flex-col gap-3 text-sm border-l border-[#28503D] pl-4 pr-2">
               <Link
                 href="/archive/infancy-growth-development"
-                className={`transition-colors leading-snug ${
-                  isActive('/archive/infancy-growth-development') ? 'text-[#F2E28B] font-semibold' : 'text-[#A2C2B0] hover:text-[#F2E28B]'
-                }`}
+                className={`transition-colors leading-snug ${isActive('/archive/infancy-growth-development') ? 'text-[#F2E28B] font-semibold' : 'text-[#A2C2B0] hover:text-[#F2E28B]'
+                  }`}
               >
                 Infancy: Growth and Development
               </Link>
               <Link
                 href="/archive/infant-physical-development"
-                className={`transition-colors leading-snug ${
-                  isActive('/archive/infant-physical-development') ? 'text-[#F2E28B] font-semibold' : 'text-[#A2C2B0] hover:text-[#F2E28B]'
-                }`}
+                className={`transition-colors leading-snug ${isActive('/archive/infant-physical-development') ? 'text-[#F2E28B] font-semibold' : 'text-[#A2C2B0] hover:text-[#F2E28B]'
+                  }`}
               >
                 Physical Growth and Developmental Changes from Infancy to Adolescence
               </Link>
               <Link
                 href="/archive/metabolic-flexibility"
-                className={`transition-colors leading-snug ${
-                  isActive('/archive/metabolic-flexibility') ? 'text-[#F2E28B] font-semibold' : 'text-[#A2C2B0] hover:text-[#F2E28B]'
-                }`}
+                className={`transition-colors leading-snug ${isActive('/archive/metabolic-flexibility') ? 'text-[#F2E28B] font-semibold' : 'text-[#A2C2B0] hover:text-[#F2E28B]'
+                  }`}
               >
                 Metabolic Flexibility in Fasting States
               </Link>
               <Link
                 href="/archive/neuroplasticity-habit"
-                className={`transition-colors leading-snug ${
-                  isActive('/archive/neuroplasticity-habit') ? 'text-[#F2E28B] font-semibold' : 'text-[#A2C2B0] hover:text-[#F2E28B]'
-                }`}
+                className={`transition-colors leading-snug ${isActive('/archive/neuroplasticity-habit') ? 'text-[#F2E28B] font-semibold' : 'text-[#A2C2B0] hover:text-[#F2E28B]'
+                  }`}
               >
                 Neuroplasticity and Habit Formation
               </Link>
               <Link
                 href="/archive/microbiome-depression"
-                className={`transition-colors leading-snug ${
-                  isActive('/archive/microbiome-depression') ? 'text-[#F2E28B] font-semibold' : 'text-[#A2C2B0] hover:text-[#F2E28B]'
-                }`}
+                className={`transition-colors leading-snug ${isActive('/archive/microbiome-depression') ? 'text-[#F2E28B] font-semibold' : 'text-[#A2C2B0] hover:text-[#F2E28B]'
+                  }`}
               >
                 The Microbiome-Gut-Brain Axis in Depression
               </Link>
@@ -127,28 +121,25 @@ export default function Sidebar() {
         {/* 4. Faculty and methodology */}
         <Link
           href="/about"
-          className={`transition-all duration-300 pl-4 py-1 border-l-2 ${
-            isActive('/about')
-              ? 'border-[#F2E28B] text-[#F2E28B] font-semibold bg-white/5'
-              : 'border-transparent text-[#E2ECE6] hover:text-[#F2E28B] hover:border-[#F2E28B]/50'
-          }`}
+          className={`transition-all duration-300 pl-4 py-1 border-l-2 ${isActive('/about')
+            ? 'border-[#F2E28B] text-[#F2E28B] font-semibold bg-white/5'
+            : 'border-transparent text-[#E2ECE6] hover:text-[#F2E28B] hover:border-[#F2E28B]/50'
+            }`}
         >
           Faculty & Methodology
         </Link>
       </nav>
 
       <div className="mt-auto">
-        <Link
-          href="/dispatch"
-          className={`text-sm font-semibold border-b pb-1 transition-colors ${
-            isActive('/dispatch')
-              ? 'text-[#F2E28B] border-[#A2C2B0]/40'
-              : 'text-[#E89248] border-[#28503D]/40 hover:text-[#F2E28B] hover:border-[#A2C2B0]/40'
-          }`}
+        <button
+          onClick={() => setIsJoinModalOpen(true)}
+          className="text-sm font-semibold border-b pb-1 transition-colors text-[#E89248] border-[#28503D]/40 hover:text-[#F2E28B] hover:border-[#A2C2B0]/40 text-left"
         >
-          Subscribe to Dispatch
-        </Link>
+          Join Our Community
+        </button>
       </div>
+
+      <JoinCommunityModal isOpen={isJoinModalOpen} onClose={() => setIsJoinModalOpen(false)} />
     </aside>
   );
 }
