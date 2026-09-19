@@ -36,16 +36,11 @@ export default function Sidebar() {
       
       {/* Top Header - Always visible */}
       <div suppressHydrationWarning className="flex items-center justify-between p-6 md:p-0 md:mb-12">
-        <div suppressHydrationWarning>
-          <h1 suppressHydrationWarning className="text-xl md:text-2xl font-serif text-[#F5F8F6]">Medela Concertedly</h1>
-          <p suppressHydrationWarning className="text-[10px] md:text-xs text-[#9BB6A7] uppercase tracking-widest mt-1 md:mt-2">Editorial Index</p>
-        </div>
-        
         {/* Hamburger Button (Mobile Only) */}
         <button 
           suppressHydrationWarning
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className="md:hidden text-[#9BB6A7] hover:text-white p-2"
+          className="md:hidden text-[#9BB6A7] hover:text-white p-2 -ml-2"
           aria-label="Toggle mobile menu"
         >
           <svg suppressHydrationWarning xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -56,6 +51,11 @@ export default function Sidebar() {
             )}
           </svg>
         </button>
+
+        <div suppressHydrationWarning className="text-right md:text-left">
+          <h1 suppressHydrationWarning className="text-xl md:text-2xl font-serif text-[#F5F8F6]">Medela Concertedly</h1>
+          <p suppressHydrationWarning className="text-[10px] md:text-xs text-[#9BB6A7] uppercase tracking-widest mt-1 md:mt-2">Editorial Index</p>
+        </div>
       </div>
 
       {/* Nav Content - Toggled on mobile, always visible on desktop */}
