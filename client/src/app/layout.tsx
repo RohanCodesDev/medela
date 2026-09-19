@@ -25,8 +25,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${lexend.variable} ${lora.variable} antialiased`} suppressHydrationWarning>
-      <body className="flex flex-col md:flex-row h-screen overflow-hidden" suppressHydrationWarning>
+    <html lang="en" className={`${lexend.variable} ${lora.variable} antialiased overflow-x-hidden`} suppressHydrationWarning>
+      <body className="flex flex-col md:flex-row h-screen overflow-x-hidden md:overflow-hidden" suppressHydrationWarning>
         {/* Dynamic Sidebar */}
         <Sidebar />
 

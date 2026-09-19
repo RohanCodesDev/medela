@@ -47,6 +47,17 @@ body {
   font-family: var(--font-sans), sans-serif;
 }
 
+/* Global box model reset — prevents any element from overflowing its container */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* Nuclear mobile guard — no image or media element can ever be wider than its container */
+img, video, iframe, embed, object, svg {
+  max-width: 100%;
+  height: auto;
+}
+
 /* Hairline dividers globally */
 * {
   border-color: var(--border-divider);
@@ -128,12 +139,28 @@ article blockquote {
 }
 
 /* ── Article body: tables ──────────────────────────────────────── */
+/* Wrap all article tables in a scrollable container on mobile */
 article table {
   width: 100%;
   border-collapse: collapse;
   margin: 2rem 0 2.5rem;
   font-size: 0.925rem;
   line-height: 1.6;
+  display: block;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  white-space: nowrap;
+}
+
+article table thead, article table tbody, article table tr {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}
+
+article table td, article table th {
+  white-space: normal;
+  word-break: break-word;
 }
 
 article table th,
@@ -219,10 +246,16 @@ article figure.article-hero-figure {
 
 article figure.article-hero-figure img {
   width: 100%;
-  height: 420px;
+  height: 200px;
   object-fit: cover;
   object-position: center 30%;
   display: block;
+}
+
+@media (min-width: 768px) {
+  article figure.article-hero-figure img {
+    height: 420px;
+  }
 }
 
 /* Wide figure — full width, for infographics/timelines */
@@ -241,19 +274,31 @@ article figure.article-wide-figure img {
   display: block;
 }
 
-/* Inline figure — floats right, text wraps around */
+/* Inline figure — block on mobile, floats right on desktop */
 article figure.article-inline-figure {
-  float: right;
-  width: 42%;
-  margin: 0.25rem 0 1.5rem 2rem;
-  clear: right;
+  float: none;
+  width: 100%;
+  margin: 1rem 0 1.5rem;
+  clear: both;
 }
 
 article figure.article-inline-figure img {
   width: 100%;
-  height: 280px;
+  height: 220px;
   object-fit: cover;
   display: block;
+}
+
+@media (min-width: 768px) {
+  article figure.article-inline-figure {
+    float: right;
+    width: 42%;
+    margin: 0.25rem 0 1.5rem 2rem;
+    clear: right;
+  }
+  article figure.article-inline-figure img {
+    height: 280px;
+  }
 }
 
 /* Centered figure — block level, horizontally centered */
@@ -277,14 +322,21 @@ article h3 {
   clear: both;
 }
 
-/* Image + text side-by-side pair */
+/* Image + text side-by-side pair — stacks on mobile */
 article .article-image-pair {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
   align-items: start;
   margin: 1.5rem 0 2rem;
   clear: both;
+}
+
+@media (min-width: 768px) {
+  article .article-image-pair {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
 }
 
 article .article-image-pair figure {
